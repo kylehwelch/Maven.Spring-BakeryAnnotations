@@ -3,7 +3,9 @@ package com.zipcodewilmington.bakery.services;
 import com.zipcodewilmington.bakery.models.Muffin;
 import com.zipcodewilmington.bakery.repositories.MuffinRepository;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
 
+@Service
 public class MuffinService {
     @Autowired
     private MuffinRepository repository;

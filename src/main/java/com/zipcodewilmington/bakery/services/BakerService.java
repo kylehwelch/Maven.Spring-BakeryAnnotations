@@ -3,7 +3,10 @@ package com.zipcodewilmington.bakery.services;
 import com.zipcodewilmington.bakery.models.Baker;
 import com.zipcodewilmington.bakery.repositories.BakerRepository;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class BakerService {
     @Autowired
     private BakerRepository repository;
