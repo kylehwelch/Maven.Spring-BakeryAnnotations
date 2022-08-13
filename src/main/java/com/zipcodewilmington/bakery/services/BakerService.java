@@ -2,8 +2,10 @@ package com.zipcodewilmington.bakery.services;
 
 import com.zipcodewilmington.bakery.models.Baker;
 import com.zipcodewilmington.bakery.repositories.BakerRepository;
+import org.springframework.beans.factory.annotation.*;
 
 public class BakerService {
+    @Autowired
     private BakerRepository repository;
 
     public BakerService(BakerRepository repository) {
