@@ -5,7 +5,7 @@ import com.zipcodewilmington.bakery.services.MuffinService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MuffinController {
@@ -15,27 +15,27 @@ public class MuffinController {
         this.service = service;
     }
 
-    @RequestMapping
+    @RequestMapping ("/muffins/{id}")
     public ResponseEntity<Iterable<Muffin>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
 
-    @RequestMapping
-    public ResponseEntity<Muffin> show(Long id) {
+    @GetMapping ("/muffins/")
+    public ResponseEntity<Muffin> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
 
-    @RequestMapping
-    public ResponseEntity<Muffin> create(Muffin baker) {
+    @PostMapping ("/muffins/{id}")
+    public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @RequestMapping
-    public ResponseEntity<Muffin> update(Long id, Muffin baker) {
+    @RequestMapping ("/muffins/{id}")
+    public ResponseEntity<Muffin> update(@PathVariable Long id, Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
 
-    @RequestMapping
-    public ResponseEntity<Boolean> destroy(Long id) {
+    @DeleteMapping ("/muffins/{id}")
+    public ResponseEntity<Boolean> destroy(@PathVariable Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }
 }
