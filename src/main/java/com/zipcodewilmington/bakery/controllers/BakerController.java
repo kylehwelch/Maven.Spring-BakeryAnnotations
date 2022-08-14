@@ -8,6 +8,7 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping
 public class BakerController {
 
     private BakerService service;
@@ -16,7 +17,6 @@ public class BakerController {
         this.service = service;
     }
 
-    @RequestMapping
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }

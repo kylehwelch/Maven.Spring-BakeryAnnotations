@@ -8,6 +8,7 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping
 public class MuffinController {
     private MuffinService service;
 
