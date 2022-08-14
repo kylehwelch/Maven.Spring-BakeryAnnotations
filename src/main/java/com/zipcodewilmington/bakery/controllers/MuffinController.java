@@ -29,7 +29,7 @@ public class MuffinController {
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @RequestMapping ("/muffins/{id}")
+    @PutMapping ("/muffins/{id}")
     public ResponseEntity<Muffin> update(@PathVariable Long id, Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
